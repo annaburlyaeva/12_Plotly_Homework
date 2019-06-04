@@ -31,7 +31,7 @@ function buildCharts(sample) {
   d3.json("samples/"+sample).then((sampleData)=>{
     
     // @TODO: Build a Bubble Chart using the sample data
-    var bubbleChartTrace = {
+    var bubbleChartData = [{
       x: sampleData['otu_ids'],
       y: sampleData['sample_values'],
       mode: 'markers',
@@ -42,9 +42,7 @@ function buildCharts(sample) {
         opacity:0.5,
         size:sampleData['sample_values']
       }
-    };
-
-    var bubbleChartData = [bubbleChartTrace];
+    }];
 
     var bubbleChartLayout ={
       title:`Sample ${sample} (Bubble Chart)`,
